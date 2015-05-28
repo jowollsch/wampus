@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<title>wampus</title>
+
+		<style>
+		p {
+			color: blue;
+			font-family: Futura;
+			font-size: 21px;
+		}
+
+		button {
+			background-color: blue;
+			color: white;
+		}
+		</style>
+	</head>
+
+	<body>
+		<p>guess a number between 1 and 10</p>
+		<input id='guess'/>
+		<button onclick='clicked()'>guess</button>
+		<p id='result'></p>
+
+		<script>
+		var answer = Math.floor( Math.random() * 11 );
+
+		function clicked () {
+			var guess = document.getElementById( 'guess' );
+			var result = document.getElementById( 'result' );
+
+			if ( guess.value == answer ) {
+				result.innerHTML = 'you got it!';
+			}
+			else if ( guess.value < answer ) {
+				result.innerHTML = 'too low';
+			}
+			else {
+				result.innerHTML = 'too high';
+			}
+		}
+		</script>
+	</body>
+</html>
